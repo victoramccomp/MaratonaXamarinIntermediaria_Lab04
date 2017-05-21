@@ -1,19 +1,19 @@
 ﻿using Microsoft.WindowsAzure.MobileServices;
-using SocialLoginLab.Droid;
+using SocialLoginLab.UWP;
 using System;
 using System.Threading.Tasks;
 
-[assembly: Xamarin.Forms.Dependency(typeof(AuthenticateDroid))]
-namespace SocialLoginLab.Droid
+[assembly: Xamarin.Forms.Dependency(typeof(AuthenticateUWP))]
+namespace SocialLoginLab.UWP
 {
-    public class AuthenticateDroid : IAuthenticate
+    public class AuthenticateUWP : IAuthenticate
     {
         public async Task<MobileServiceUser> Authenticate(MobileServiceClient client,
             MobileServiceAuthenticationProvider provider)
         {
             try
             {
-                return await client.LoginAsync(Xamarin.Forms.Forms.Context, provider);
+                return await client.LoginAsync(provider);
             }
             catch (Exception ex)
             {
