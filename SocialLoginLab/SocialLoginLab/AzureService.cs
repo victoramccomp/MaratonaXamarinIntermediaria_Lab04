@@ -10,7 +10,7 @@ namespace SocialLoginLab
 {
     public class AzureService
     {
-        static readonly string AppUrl = "https://AQUI.azurewebsites.net";
+        static readonly string AppUrl = "http://xamarinsociallogin.azurewebsites.net";
 
         public MobileServiceClient Client { get; set; } = null;
 
